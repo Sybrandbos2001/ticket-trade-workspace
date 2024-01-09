@@ -1,2 +1,52 @@
-<ticket-trade-workspace-nx-welcome></ticket-trade-workspace-nx-welcome>
-<router-outlet></router-outlet>
+<!-- Navigation -->
+<mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+        <button (click)="drawer.toggle()" mat-icon-button aria-label="menu-icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>TicketTrade</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- sidenav -->
+<mat-drawer-container class="drawer-container">
+    <mat-drawer #drawer mode="push" opened="false" class="drawer">
+        <mat-list class="list mx-3">
+            <mat-list-item class="list-item my-2">
+                <a mat-button class="drawer-button" routerLink="/">
+                    <mat-icon>home</mat-icon>Home
+                </a>
+            </mat-list-item>
+            <mat-list-item class="list-item my-2">
+                <a mat-button class="drawer-button" routerLink="/home">
+                    <mat-icon>music_note</mat-icon>Concerten
+                </a>
+            </mat-list-item>
+            <mat-list-item class="list-item my-2">
+            <a mat-button class="drawer-button" color="white" routerLink="/login">
+                <mat-icon>person</mat-icon>Account
+            </a>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+
+<!-- Main content -->
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</mat-drawer-container>
+
+<!-- Footer -->
+
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="my-3" id="footer-copyright">©TicketTrade 2023</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+

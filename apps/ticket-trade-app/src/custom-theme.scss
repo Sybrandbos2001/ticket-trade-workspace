@@ -1,0 +1,123 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$theme-primary: (
+  50 : #e6eaed,
+  100 : #c1cad3,
+  200 : #98a6b6,
+  300 : #6e8299,
+  400 : #4f6883,
+  500 : #304d6d,
+  600 : #2b4665,
+  700 : #243d5a,
+  800 : #1e3450,
+  900 : #13253e,
+  A100 : #7badff,
+  A200 : #488dff,
+  A400 : #156eff,
+  A700 : #005ffb,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #ffffff,
+      A700 : #ffffff,
+  ),
+);
+
+$theme-accent: (
+  50 : #ecf5fd,
+  100 : #d0e6fb,
+  200 : #b1d6f9,
+  300 : #92c6f6,
+  400 : #7ab9f4,
+  500 : #63adf2,
+  600 : #5ba6f0,
+  700 : #519cee,
+  800 : #4793ec,
+  900 : #3583e8,
+  A100 : #ffffff,
+  A200 : #fcfdff,
+  A400 : #c9e0ff,
+  A700 : #b0d1ff,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  ),
+);
+
+$theme-warning: (
+  50 : #fce0e8,
+  100 : #f8b3c5,
+  200 : #f4809f,
+  300 : #ef4d79,
+  400 : #eb265c,
+  500 : #e8003f,
+  600 : #e50039,
+  700 : #e20031,
+  800 : #de0029,
+  900 : #d8001b,
+  A100 : #ffffff,
+  A200 : #ffcdd0,
+  A400 : #ff9aa1,
+  A700 : #ff8089,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  ),
+);
+
+$theme-primary: mat.define-palette($theme-primary, 800, 500);
+$theme-accent: mat.define-palette($theme-accent, 400, 200, 900);
+$theme-warning: mat.define-palette($theme-warning, 500, 200, 900);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $theme-primary,
+      accent: $theme-accent,
+      warn: $theme-warning,
+    ),
+    typography:
+      mat.define-typography-config(
+        $font-family: 'Raleway, sans-serif',
+      ),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($theme);
